@@ -1,15 +1,19 @@
-function Greeting() {
-    return (
-          <div>
-          <h1>&quot;I swear by my pretty floral bonnet, I will end you.&quot;</h1>
-        <h1>Test title</h1>
-        <svg>
-          <circle cx="25" cy="75" r="20" stroke="green" strokeWidth="2" />
-        </svg>
-        <form>
-          <input type="text" />
-        </form>
-      </div>)
-  }
-  
-export default Greeting;
+// a list of todos, each todo object has a task and an id
+const todos = [
+  { task: "mow the yard", id: crypto.randomUUID() },
+  { task: "Work on Odin Projects", id: crypto.randomUUID() },
+  { task: "feed the cat", id: crypto.randomUUID() },
+];
+
+function TodoList() {
+  return (
+    <ul>
+      {todos.map((todo) => (
+        // here we are using the already generated id as the key.
+        <li key={todo.id}>{todo.task}</li>
+      ))}
+    </ul>
+  );
+}
+
+export default TodoList;
